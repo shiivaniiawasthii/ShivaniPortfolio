@@ -17,11 +17,11 @@ export default function Contact() {
   };
 
   return (
-    <main className="px-8 py-16">
+    <main className="px-8 py-16 bg-section text-foreground transition-colors duration-300">
       <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
 
       {success && (
-        <p className="bg-green-200 p-3 rounded mb-4">
+        <p className="bg-card text-foreground p-3 rounded mb-4 border border-foreground/20">
           Thank you! Your message has been sent.
         </p>
       )}
@@ -30,7 +30,7 @@ export default function Contact() {
         <input
           type="text"
           placeholder="Your Name"
-          className="w-full border p-2 rounded"
+          className="w-full bg-background border border-foreground/20 p-2 rounded focus:outline-none focus:border-foreground"
           onChange={(e) =>
             setForm({ ...form, name: e.target.value })
           }
@@ -39,7 +39,7 @@ export default function Contact() {
         <input
           type="email"
           placeholder="Your Email"
-          className="w-full border p-2 rounded"
+          className="w-full bg-background border border-foreground/20 p-2 rounded focus:outline-none focus:border-foreground"
           onChange={(e) =>
             setForm({ ...form, email: e.target.value })
           }
@@ -47,7 +47,7 @@ export default function Contact() {
 
         <textarea
           placeholder="Your Message"
-          className="w-full border p-2 rounded"
+          className="w-full bg-background border border-foreground/20 p-2 rounded focus:outline-none focus:border-foreground"
           rows={4}
           onChange={(e) =>
             setForm({ ...form, message: e.target.value })
@@ -56,7 +56,7 @@ export default function Contact() {
 
         <button
           type="submit"
-          className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
+          className="bg-card text-foreground px-6 py-2 rounded border border-foreground/20 hover:opacity-80 transition"
         >
           Send Message
         </button>

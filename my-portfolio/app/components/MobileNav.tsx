@@ -9,7 +9,6 @@ const navItems = [
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
-  { id: "resume", label: "Resume" },
 ];
 
 export default function MobileNav({ active }: { active: string }) {
@@ -17,19 +16,22 @@ export default function MobileNav({ active }: { active: string }) {
 
   return (
     <div className="relative">
-      <button onClick={() => setOpen(!open)} className="p-2 border rounded-md">
+      <button
+        onClick={() => setOpen(!open)}
+        className="p-2 border border-border rounded-md bg-card text-card-foreground"
+      >
         Menu
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow py-2">
+        <div className="absolute right-0 mt-2 w-40 bg-card rounded-lg shadow py-2">
           {navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               onClick={() => setOpen(false)}
-              className={`block px-4 py-2 text-sm ${
-                active === item.id ? "bg-pink-100 font-semibold" : ""
+              className={`block px-4 py-2 text-sm text-foreground hover:bg-muted rounded-md ${
+                active === item.id ? "bg-accent text-accent-foreground font-semibold" : ""
               }`}
             >
               {item.label}

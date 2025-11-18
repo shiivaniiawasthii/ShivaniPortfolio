@@ -8,21 +8,27 @@ import SkillsSection from "./components/SkillsSection";
 import TimelineSection from "./components/TimeLineSection";
 import ProjectsSection from "./components/ProjectSection";
 import ContactSection from "./components/ContactSection";
-import ResumeSection from "./components/ResumeSection";
 
 export default function Page() {
   const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const sections = Array.from(document.querySelectorAll("section")) as HTMLElement[];
+    const sections = Array.from(
+      document.querySelectorAll("section")
+    ) as HTMLElement[];
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
         });
       },
-      { rootMargin: "-40% 0px -40% 0px" }
+      {
+        rootMargin: "-40% 0px -40% 0px",
+        threshold: 0.2,
+      }
     );
 
     sections.forEach((sec) => observer.observe(sec));
@@ -30,7 +36,7 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-pink-100 text-pink-900">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Navbar active={active} />
 
       <main className="pt-10">
@@ -40,10 +46,9 @@ export default function Page() {
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
-        <ResumeSection />
       </main>
 
-      <footer className="py-10 text-center text-gray-500 text-sm">
+      <footer className="py-10 text-center text-muted text-sm">
         © {new Date().getFullYear()} Shivani Awasthi • Built with Next.js
       </footer>
     </div>

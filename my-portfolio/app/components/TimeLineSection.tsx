@@ -2,7 +2,7 @@ import TimelineItem from "./TimelineItem";
 
 export default function TimelineSection() {
   return (
-    <section id="timeline" className="py-20 bg-pink-50">
+    <section id="timeline" className="py-20 bg-section text-foreground">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl font-bold">Timeline</h2>
 

@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 export default function ProfileCard() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <div className="p-4 bg-white rounded-2xl shadow-lg max-w-sm mx-auto">
-        
+      <div className="p-4 bg-card text-card-foreground rounded-2xl shadow-lg max-w-sm mx-auto">
+
+        {/* Profile Image */}
         <div className="w-80 h-80 rounded-full overflow-hidden mx-auto relative">
           <Image
             src="/profile.jpeg"
@@ -16,8 +17,12 @@ export default function ProfileCard() {
           />
         </div>
 
-        <h3 className="text-center font-semibold mt-4">Design + Code</h3>
-        <p className="mt-2 text-center text-pink-600">
+        {/* Text */}
+        <h3 className="text-center font-semibold mt-4 text-foreground">
+          Design + Code
+        </h3>
+
+        <p className="mt-2 text-center text-primary">
           I combine design thinking with clean code to deliver great UI.
         </p>
       </div>

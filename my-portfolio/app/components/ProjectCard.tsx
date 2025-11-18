@@ -16,11 +16,13 @@ export default function ProjectCard({
       whileHover={{ y: -6 }}
       viewport={{ once: true }}
       href={link}
-      className="p-4 bg-white rounded-xl shadow hover:shadow-lg transition"
+      className="p-4 rounded-xl bg-card text-card-foreground shadow hover:shadow-lg transition"
     >
       <p className="font-semibold">{title}</p>
-      <p className="text-sm text-pink-600 mt-2">{desc}</p>
-      <p className="text-xs text-gray-500 mt-4">View →</p>
+
+      <p className="text-sm text-primary mt-2">{desc}</p>
+
+      <p className="text-xs text-muted-foreground mt-4">View →</p>
     </motion.a>
   );
 }

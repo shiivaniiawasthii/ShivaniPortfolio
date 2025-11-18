@@ -3,9 +3,9 @@ import { projects } from "../data/project";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-24 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-pink-500">Projects</h2>
+        <h2 className="text-3xl font-bold text-primary">Projects</h2>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((p) => (
@@ -13,7 +13,7 @@ export default function Projects() {
               key={p.title}
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow"
+              className="p-4 rounded-xl shadow bg-card text-card-foreground"
             >
               <img
                 src={p.image}
@@ -21,7 +21,7 @@ export default function Projects() {
               />
 
               <div className="mt-3 font-semibold text-lg">{p.title}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">
+              <div className="text-sm text-muted-foreground">
                 {p.description}
               </div>
 
@@ -29,14 +29,14 @@ export default function Projects() {
                 <a
                   href={p.github}
                   target="_blank"
-                  className="text-sm px-3 py-2 bg-gray-800 text-white rounded"
+                  className="text-sm px-3 py-2 rounded bg-primary text-primary-foreground"
                 >
                   GitHub
                 </a>
                 <a
                   href={p.live}
                   target="_blank"
-                  className="text-sm px-3 py-2 border border-pink-400 rounded"
+                  className="text-sm px-3 py-2 rounded border border-primary"
                 >
                   Live
                 </a>
